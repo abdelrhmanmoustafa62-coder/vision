@@ -39,6 +39,12 @@
 | Path | Method | Description |
 |------|--------|-------------|
 | `/` | GET | Main homepage with full SEO optimization |
+| `/service/etmad-platform-management` | GET | إدارة منصة اعتماد - Service detail page with pricing packages |
+| `/service/tender-management` | GET | إدارة العروض والمناقصات - Service detail page |
+| `/service/business-development` | GET | تطوير الأعمال - Service detail page |
+| `/service/marketing-solutions` | GET | الحلول التسويقية - Service detail page |
+| `/service/erp-solutions` | GET | حلول ERP - Service detail page |
+| `/service/financial-solutions` | GET | الحلول المالية - Service detail page |
 | `/api/health` | GET | Health check endpoint |
 | `/api/contact` | POST | Contact form submission endpoint |
 | `/robots.txt` | GET | Search engine robots configuration |
@@ -51,11 +57,26 @@
 
 ### 🎯 Services Offered
 
-1. **إدارة العروض والمناقصات** - Tender & Proposal Management
-2. **تطوير الأعمال والمؤسسات** - Business Development
-3. **الحلول الاستراتيجية والتسويقية** - Strategic Marketing Solutions
-4. **حلول التكنولوجيا (ERP)** - Technology Solutions
-5. **الحلول المالية والاعتمادات** - Financial Solutions & Certifications
+1. **الإدارة الشاملة لمنصة اعتماد** - Complete E'timad Platform Management
+   - ✅ **Full Detail Page Available** with monthly pricing packages
+   - باقة البداية: 9,000 ريال/شهرياً (5 عروض)
+   - باقة النمو: 10,900 ريال/شهرياً (7 عروض) - الأكثر طلباً
+   - باقة الريادة: 13,500 ريال/شهرياً (10 عروض)
+   
+2. **إدارة العروض والمناقصات** - Tender & Proposal Management
+   - ⏳ Detail page structure ready, awaiting content
+
+3. **تطوير الأعمال والمؤسسات** - Business Development
+   - ⏳ Detail page structure ready, awaiting content
+
+4. **الحلول الاستراتيجية والتسويقية** - Strategic Marketing Solutions
+   - ⏳ Detail page structure ready, awaiting content
+
+5. **حلول التكنولوجيا (ERP)** - Technology Solutions
+   - ⏳ Detail page structure ready, awaiting content
+
+6. **الحلول المالية والاعتمادات** - Financial Solutions & Certifications
+   - ⏳ Detail page structure ready, awaiting content
 
 ### 📊 Data Architecture
 
