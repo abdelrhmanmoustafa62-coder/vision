@@ -21,6 +21,12 @@
 - 📝 **robots.txt and sitemap.xml** for search engine optimization
 - 🚀 **Cloudflare Pages Ready** with Hono backend
 - ⚡ **Fast Performance** with edge deployment
+- 🎭 **Stunning Animations** with scroll effects, parallax, and 3D transforms
+- 🖱️ **Custom Cursor Follower** with blend mode effects
+- ✨ **Particle Background** with connected nodes animation
+- 🎬 **Interactive Hover Effects** on all cards and buttons
+- 🌊 **Smooth Scroll Animations** with Intersection Observer
+- 💫 **Gradient Animations** and floating elements
 
 ### 🔗 Public URLs
 
