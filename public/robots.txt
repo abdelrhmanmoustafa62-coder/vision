@@ -1,0 +1,11 @@
+# robots.txt for Roaia Business Solutions
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://www.roaia.org/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
