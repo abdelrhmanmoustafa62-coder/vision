@@ -327,5 +327,123 @@ app.get('/', (c) => {
 </html>`)
 })
 
+// Service detail pages - catch all service/* routes
+app.get('/service/*', (c) => {
+  // For service detail pages, serve the same HTML as home page
+  // The client-side routing will handle showing the correct service
+  return c.html(`<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Primary Meta Tags -->
+    <title>رؤية لحلول الأعمال | Roaia Business Solutions - خدماتنا</title>
+    <meta name="title" content="رؤية لحلول الأعمال | Roaia Business Solutions - خدماتنا" />
+    <meta name="description" content="اكتشف خدماتنا المتكاملة في إدارة المناقصات، تطوير الأعمال، والحلول المالية في السعودية ومصر." />
+    <meta name="keywords" content="إدارة مناقصات, منصة اعتماد, تطوير أعمال, حلول مالية, استشارات أعمال, ERP, أيزو, السعودية, مصر, Roaia, رؤية" />
+    <meta name="author" content="Roaia Business Solutions" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Arabic" />
+    <link rel="canonical" href="https://www.roaia.org/" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.roaia.org/" />
+    <meta property="og:title" content="رؤية لحلول الأعمال | Roaia Business Solutions" />
+    <meta property="og:description" content="شريكك الاستراتيجي الموثوق لإدارة المناقصات وتطوير الأعمال في السعودية ومصر. حلول متكاملة لتحقيق النمو المستدام." />
+    <meta property="og:image" content="https://www.roaia.org/static/og-image.jpg" />
+    <meta property="og:locale" content="ar_SA" />
+    <meta property="og:site_name" content="Roaia Business Solutions" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://www.roaia.org/" />
+    <meta name="twitter:title" content="رؤية لحلول الأعمال | Roaia Business Solutions" />
+    <meta name="twitter:description" content="شريكك الاستراتيجي الموثوق لإدارة المناقصات وتطوير الأعمال في السعودية ومصر" />
+    <meta name="twitter:image" content="https://www.roaia.org/static/og-image.jpg" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/static/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/logo.png" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Cairo', 'sans-serif'],
+            },
+            colors: {
+              primary: {
+                50: '#eff6ff',
+                100: '#dbeafe',
+                200: '#bfdbfe',
+                300: '#93c5fd',
+                400: '#60a5fa',
+                500: '#3b82f6',
+                600: '#1e40af',
+                700: '#1e3a8a',
+                800: '#1e2a5e',
+                900: '#0f172a',
+              },
+              accent: {
+                50: '#fef3c7',
+                100: '#fde68a',
+                200: '#fcd34d',
+                300: '#fbbf24',
+                400: '#f59e0b',
+                500: '#d97706',
+                600: '#b45309',
+                700: '#92400e',
+              }
+            },
+            animation: {
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'float-delayed': 'float 6s ease-in-out 3s infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-20px)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      /* Custom scrollbar for better UX */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1e2a5e;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #d97706;
+        border-radius: 5px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #b45309;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/static/client.js"></script>
+  </body>
+</html>
+`)
+})
+
 export default app
 

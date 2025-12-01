@@ -111,8 +111,25 @@ const Services: React.FC = () => {
                     ))}
                   </ul>
                   
-                  {/* CTA Button */}
-                  <div className="mt-8 pt-6 border-t border-primary-600 flex justify-end">
+                  {/* CTA Buttons */}
+                  <div className="mt-8 pt-6 border-t border-primary-600 flex justify-between items-center gap-2">
+                    {service.slug ? (
+                      <a 
+                        href={`/service/${service.slug}`}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          window.history.pushState({}, '', `/service/${service.slug}`);
+                          window.dispatchEvent(new PopStateEvent('popstate'));
+                          window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }}
+                        className="text-accent-400 hover:text-accent-300 text-sm font-medium transition-colors duration-300 flex items-center gap-1"
+                      >
+                        <span>عرض التفاصيل</span>
+                        <ArrowLeft size={14} />
+                      </a>
+                    ) : (
+                      <div />
+                    )}
                     <a 
                       href="#contact" 
                       className={`group inline-flex items-center gap-2 text-sm font-bold px-4 py-2 rounded-lg transition-all duration-300 ${

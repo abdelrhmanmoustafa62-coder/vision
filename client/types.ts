@@ -9,6 +9,7 @@ export interface ServiceItem {
   title: string;
   description: string;
   icon: LucideIcon;
+  slug?: string;
   features: string[];
 }
 

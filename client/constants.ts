@@ -27,20 +27,34 @@ export const NAV_ITEMS = [
 
 export const SERVICES: ServiceItem[] = [
   {
+    title: 'الإدارة الشاملة لمنصة اعتماد',
+    description: 'إدارة متكاملة ليومية لمنصة اعتماد مع باقات شهرية مرنة.',
+    icon: FileText,
+    slug: 'etmad-platform-management',
+    features: [
+      'إدارة يومية كاملة للمنصة',
+      'إعداد العروض الفنية والمالية',
+      'متابعة الفرص وتقارير دورية',
+      'باقات شهرية مرنة تبدأ من 9,000 ريال'
+    ]
+  },
+  {
     title: 'إدارة العروض والمناقصات',
     description: 'دعم احترافي شامل لتعزيز فرص الفوز بالمشاريع.',
     icon: FileText,
+    slug: 'tender-management',
     features: [
       'إعداد العروض الفنية والمالية',
-      'إدارة منصة اعتماد',
       'إعداد كراسات الشروط والمواصفات',
-      'تقييم العروض'
+      'تقييم العروض',
+      'متابعة المناقصات'
     ]
   },
   {
     title: 'تطوير الأعمال والمؤسسات',
     description: 'تعزيز القدرات الداخلية وتحسين الأداء العام.',
     icon: TrendingUp,
+    slug: 'business-development',
     features: [
       'تطوير المؤسسات والعمليات',
       'إعداد ملف المحتوى المحلي',
@@ -51,6 +65,7 @@ export const SERVICES: ServiceItem[] = [
     title: 'الحلول الاستراتيجية والتسويقية',
     description: 'بناء حضور قوي ومؤثر في السوق.',
     icon: Megaphone,
+    slug: 'marketing-solutions',
     features: [
       'إدارة منصات التواصل الاجتماعي',
       'خدمة الإعلان الموجه لصناع القرار'
@@ -60,6 +75,7 @@ export const SERVICES: ServiceItem[] = [
     title: 'حلول التكنولوجيا (ERP)',
     description: 'تحسين إدارة الموارد وتكامل العمليات الداخلية.',
     icon: Cpu,
+    slug: 'erp-solutions',
     features: [
       'Bitrix 24, ORACLE, Odoo',
       'مواءمة النظام وإدارة التغيير',
@@ -70,6 +86,7 @@ export const SERVICES: ServiceItem[] = [
     title: 'الحلول المالية والاعتمادات',
     description: 'دعم استشاري لضمان استقرار ونمو أعمالك.',
     icon: BadgeDollarSign,
+    slug: 'financial-solutions',
     features: [
       'حلول التمويل والاستثمار',
       'تأهيل شهادات الأيزو العالمية',
