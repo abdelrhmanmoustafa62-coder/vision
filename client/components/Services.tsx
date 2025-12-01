@@ -116,13 +116,6 @@ const Services: React.FC = () => {
                     {service.slug ? (
                       <a 
                         href={`/service/${service.slug}`}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          const newUrl = `/service/${service.slug}`;
-                          window.history.pushState({}, '', newUrl);
-                          window.dispatchEvent(new PopStateEvent('popstate'));
-                          window.scrollTo({ top: 0, behavior: 'smooth' });
-                        }}
                         className="text-accent-400 hover:text-accent-300 text-sm font-medium transition-colors duration-300 flex items-center gap-1"
                       >
                         <span>عرض التفاصيل</span>
