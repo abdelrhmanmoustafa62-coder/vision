@@ -46,16 +46,18 @@ const Services: React.FC = () => {
                 ref={ref}
                 onMouseEnter={() => setHoveredCard(index)}
                 onMouseLeave={() => setHoveredCard(null)}
-                className={`relative bg-gradient-to-br from-primary-800 to-primary-900 rounded-2xl p-8 border border-primary-700 transition-all duration-700 ${
+                className={`relative bg-gradient-to-br from-primary-800 to-primary-900 rounded-2xl p-8 border transition-all duration-500 cursor-pointer ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+                } ${
+                  isHovered 
+                    ? 'border-accent-500 shadow-2xl shadow-accent-500/30 scale-105' 
+                    : 'border-primary-700 hover:border-primary-600'
                 }`}
                 style={{ 
                   transitionDelay: `${index * 150}ms`,
                   transform: isHovered 
-                    ? 'translateY(-8px) rotateX(5deg)' 
-                    : 'translateY(0) rotateX(0deg)',
-                  transformStyle: 'preserve-3d',
-                  perspective: '1000px'
+                    ? 'translateY(-12px)' 
+                    : 'translateY(0)',
                 }}
               >
                 {/* Glow effect on hover */}
@@ -116,10 +118,13 @@ const Services: React.FC = () => {
                     {service.slug ? (
                       <a 
                         href={`/service/${service.slug}`}
-                        className="text-accent-400 hover:text-accent-300 text-sm font-medium transition-colors duration-300 flex items-center gap-1"
+                        className="group inline-flex items-center gap-1 text-accent-400 hover:text-accent-300 text-sm font-medium transition-all duration-300 hover:gap-2 hover:translate-x-1"
                       >
-                        <span>عرض التفاصيل</span>
-                        <ArrowLeft size={14} />
+                        <span className="relative">
+                          عرض التفاصيل
+                          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-400 group-hover:w-full transition-all duration-300"></span>
+                        </span>
+                        <ArrowLeft size={14} className="transition-transform duration-300 group-hover:-translate-x-1" />
                       </a>
                     ) : (
                       <div />
@@ -129,14 +134,14 @@ const Services: React.FC = () => {
                       className={`group inline-flex items-center gap-2 text-sm font-bold px-4 py-2 rounded-lg transition-all duration-300 ${
                         isHovered 
                           ? 'bg-accent-500 text-white shadow-lg shadow-accent-500/50 scale-105' 
-                          : 'text-accent-400 hover:text-accent-300'
+                          : 'bg-primary-700 text-accent-400 hover:bg-accent-500 hover:text-white hover:scale-105 hover:shadow-lg hover:shadow-accent-500/50'
                       }`}
                     >
                       <span>طلب الخدمة</span>
                       <ArrowLeft 
                         size={16} 
                         className={`transition-transform duration-300 ${
-                          isHovered ? '-translate-x-1' : ''
+                          isHovered ? '-translate-x-1' : 'group-hover:-translate-x-1'
                         }`}
                       />
                     </a>
