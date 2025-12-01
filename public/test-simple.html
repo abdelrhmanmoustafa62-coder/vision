@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار بسيط - Roaia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            color: #fbbf24;
+            margin-bottom: 30px;
+        }
+        .test-item {
+            background: rgba(255,255,255,0.05);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border: 2px solid rgba(251, 191, 36, 0.3);
+        }
+        .status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .success {
+            background: #10b981;
+        }
+        .error {
+            background: #ef4444;
+        }
+        a {
+            color: #fbbf24;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        a:hover {
+            color: #f59e0b;
+            text-decoration: underline;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #fbbf24;
+            color: #1e3a8a;
+            border-radius: 8px;
+            margin: 10px 5px;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(251, 191, 36, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 صفحة اختبار موقع رؤية</h1>
+        
+        <div class="test-item">
+            <h3>✅ حالة الخادم</h3>
+            <span class="status success">يعمل بشكل صحيح</span>
+            <p>إذا كنت ترى هذه الصفحة، فإن الخادم يعمل بشكل جيد!</p>
+        </div>
+
+        <div class="test-item">
+            <h3>📋 روابط الاختبار</h3>
+            <div>
+                <a href="/" class="btn">🏠 الصفحة الرئيسية</a>
+                <a href="/service/etmad-platform-management" class="btn">📄 صفحة الخدمة</a>
+            </div>
+        </div>
+
+        <div class="test-item">
+            <h3>ℹ️ معلومات التشخيص</h3>
+            <p><strong>المتصفح:</strong> <span id="browser"></span></p>
+            <p><strong>الوقت:</strong> <span id="time"></span></p>
+            <p><strong>حجم الشاشة:</strong> <span id="screen"></span></p>
+        </div>
+
+        <div class="test-item">
+            <h3>🔍 إذا كانت الصفحة الرئيسية لا تعمل:</h3>
+            <ol style="text-align: right;">
+                <li>جرب تحديث الصفحة (F5 أو Ctrl+R)</li>
+                <li>امسح الكاش (Ctrl+Shift+Delete)</li>
+                <li>جرب متصفح آخر</li>
+                <li>تحقق من اتصال الإنترنت</li>
+                <li>افتح Console (F12) وابحث عن أخطاء JavaScript</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        // Display browser info
+        document.getElementById('browser').textContent = navigator.userAgent;
+        document.getElementById('time').textContent = new Date().toLocaleString('ar-SA');
+        document.getElementById('screen').textContent = window.innerWidth + 'x' + window.innerHeight;
+        
+        // Test if main page is accessible
+        fetch('/')
+            .then(response => {
+                if (response.ok) {
+                    console.log('✅ Main page is accessible');
+                } else {
+                    console.error('❌ Main page returned:', response.status);
+                }
+            })
+            .catch(error => {
+                console.error('❌ Error fetching main page:', error);
+            });
+    </script>
+</body>
+</html>
