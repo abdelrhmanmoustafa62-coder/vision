@@ -118,7 +118,8 @@ const Services: React.FC = () => {
                         href={`/service/${service.slug}`}
                         onClick={(e) => {
                           e.preventDefault();
-                          window.history.pushState({}, '', `/service/${service.slug}`);
+                          const newUrl = `/service/${service.slug}`;
+                          window.history.pushState({}, '', newUrl);
                           window.dispatchEvent(new PopStateEvent('popstate'));
                           window.scrollTo({ top: 0, behavior: 'smooth' });
                         }}

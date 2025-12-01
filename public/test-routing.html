@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>اختبار التوجيه</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .btn { 
+            display: inline-block; 
+            padding: 10px 20px; 
+            background: #3b82f6; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            margin: 10px 0;
+        }
+        #log { 
+            margin-top: 20px; 
+            padding: 10px; 
+            background: #f5f5f5; 
+            border: 1px solid #ddd;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>اختبار نظام التوجيه</h1>
+    
+    <div>
+        <a href="/" class="btn">الصفحة الرئيسية</a>
+        <a href="/service/etmad-platform-management" class="btn" id="serviceLink">خدمة إدارة منصة اعتماد</a>
+    </div>
+    
+    <div id="log">
+        <strong>السجل:</strong><br>
+        المسار الحالي: <span id="currentPath"></span>
+    </div>
+    
+    <script>
+        const logDiv = document.getElementById('log');
+        const pathSpan = document.getElementById('currentPath');
+        
+        function log(message) {
+            console.log(message);
+            logDiv.innerHTML += '<br>' + message;
+        }
+        
+        function updatePath() {
+            pathSpan.textContent = window.location.pathname;
+            log('المسار الحالي: ' + window.location.pathname);
+        }
+        
+        updatePath();
+        
+        document.getElementById('serviceLink').addEventListener('click', function(e) {
+            e.preventDefault();
+            log('تم النقر على رابط الخدمة');
+            const newUrl = this.href;
+            log('الانتقال إلى: ' + newUrl);
+            window.history.pushState({}, '', newUrl);
+            log('تم تحديث التاريخ');
+            window.dispatchEvent(new PopStateEvent('popstate'));
+            log('تم إرسال حدث popstate');
+            updatePath();
+        });
+        
+        window.addEventListener('popstate', function() {
+            log('تم استقبال حدث popstate');
+            updatePath();
+        });
+    </script>
+</body>
+</html>
