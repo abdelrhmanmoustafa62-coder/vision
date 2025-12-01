@@ -126,7 +126,13 @@ app.get('/', (c) => {
       body {
         font-family: 'Cairo', sans-serif;
         background-color: #f8fafc;
+        cursor: none;
       }
+      
+      * {
+        cursor: none !important;
+      }
+      
       ::-webkit-scrollbar {
         width: 8px;
       }
@@ -139,6 +145,103 @@ app.get('/', (c) => {
       }
       ::-webkit-scrollbar-thumb:hover {
         background: #94a3b8;
+      }
+
+      /* Keyframe Animations */
+      @keyframes gradient {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+      }
+
+      @keyframes gradient-slow {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-20px) rotate(5deg); }
+      }
+
+      @keyframes float-delayed {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-30px) rotate(-5deg); }
+      }
+
+      @keyframes pulse-slow {
+        0%, 100% { opacity: 0.6; }
+        50% { opacity: 1; }
+      }
+
+      @keyframes scroll {
+        0% { transform: translateY(0); opacity: 0; }
+        50% { opacity: 1; }
+        100% { transform: translateY(100%); opacity: 0; }
+      }
+
+      @keyframes shimmer {
+        0% { background-position: -1000px 0; }
+        100% { background-position: 1000px 0; }
+      }
+
+      .animate-gradient {
+        background-size: 200% 200%;
+        animation: gradient 3s ease infinite;
+      }
+
+      .animate-gradient-slow {
+        background-size: 200% 200%;
+        animation: gradient-slow 8s ease infinite;
+      }
+
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .animate-float-delayed {
+        animation: float-delayed 8s ease-in-out infinite;
+      }
+
+      .animate-pulse-slow {
+        animation: pulse-slow 3s ease-in-out infinite;
+      }
+
+      .animate-scroll {
+        animation: scroll 2s ease-in-out infinite;
+      }
+
+      .animate-shimmer {
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+        background-size: 1000px 100%;
+        animation: shimmer 2s infinite;
+      }
+
+      /* Smooth scroll */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Card hover effects */
+      .group:hover .group-hover\:animate-bounce {
+        animation: bounce 1s ease-in-out infinite;
+      }
+
+      /* Perspective container */
+      .perspective-1000 {
+        perspective: 1000px;
+      }
+
+      /* 3D Transform utilities */
+      .transform-3d {
+        transform-style: preserve-3d;
+      }
+
+      /* Backdrop blur support */
+      @supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+        .backdrop-blur-custom {
+          -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+        }
       }
     </style>
     
