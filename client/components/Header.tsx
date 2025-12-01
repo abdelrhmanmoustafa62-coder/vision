@@ -23,17 +23,14 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           {/* Logo with animation */}
-          <a href="#" className="group flex items-center gap-2">
-            <div className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 group-hover:rotate-6 ${
-              isScrolled ? 'bg-gradient-to-br from-primary-500 to-primary-600 text-white shadow-lg shadow-primary-500/50' : 'bg-white text-primary-500'
-            }`}>
-              <Globe size={24} className="group-hover:animate-pulse" />
-            </div>
-            <span className={`text-2xl font-bold tracking-tight transition-all duration-300 ${
-              isScrolled ? 'text-primary-900' : 'text-white'
-            }`}>
-              رؤية <span className={`transition-colors ${isScrolled ? 'text-accent-600' : 'text-accent-400'}`}>لحلول الأعمال</span>
-            </span>
+          <a href="#" className="group flex items-center gap-3">
+            <img 
+              src="/static/logo.png" 
+              alt="Roaia Business Solutions Logo - رؤية لحلول الأعمال" 
+              className={`h-12 w-auto transition-all duration-300 transform group-hover:scale-110 ${
+                isScrolled ? 'drop-shadow-lg' : 'drop-shadow-2xl'
+              }`}
+            />
           </a>
 
           {/* Desktop Navigation with hover effects */}

@@ -81,8 +81,8 @@ app.get('/', (c) => {
     <meta name="twitter:image" content="https://www.roaia.org/static/og-image.jpg" />
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="/static/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/logo.png" />
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -253,7 +253,12 @@ app.get('/', (c) => {
       "name": "Roaia Business Solutions",
       "alternateName": "رؤية لحلول الأعمال",
       "url": "https://www.roaia.org",
-      "logo": "https://www.roaia.org/static/logo.png",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.roaia.org/static/logo.png",
+        "width": "1024",
+        "height": "540"
+      },
       "description": "شريكك الاستراتيجي الموثوق لإدارة المناقصات وتطوير الأعمال في السعودية ومصر",
       "foundingDate": "2021",
       "contactPoint": {
@@ -323,3 +328,4 @@ app.get('/', (c) => {
 })
 
 export default app
+
