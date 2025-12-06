@@ -1,0 +1,12 @@
+{
+  "build": {
+    "command": "npm run build",
+    "destination": "dist",
+    "environment": {
+      "NODE_VERSION": "22"
+    }
+  },
+  "preview": {
+    "command": "npm run build"
+  }
+}
